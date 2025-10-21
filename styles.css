@@ -54,3 +54,46 @@ header nav button {
   padding: 8px 12px;
   cursor: default;
 }
+
+html, body { height: 100%; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1; }
+
+footer {
+  background: #0b1220;
+  color: #e9eefb;
+  border-top: 1px solid #1a2b4a;
+  padding: 8px 0 0;                  
+  display: grid;
+
+  grid-template-columns: minmax(0, 550px) minmax(0, 550px);
+  justify-content: center;              
+  column-gap: 24px;
+  row-gap: 8px;
+}
+
+footer > section[aria-label="Footer about"] { grid-column: 1; margin: 0 16px; }
+footer > section[aria-label="Contact info"] { grid-column: 2; margin: 0 16px; }
+
+footer > section[aria-label="Meta"] {
+  grid-column: 1 / -1;
+  margin: 0 16px;
+  padding-bottom: 6px;                 
+}
+
+footer h2 { font-size: 18px; margin: 0 0 6px; }
+footer p, footer address, footer small {
+  font-size: 15px;
+  line-height: 1.35;
+  margin: 0;
+}
+
+footer a { color: #e9eefb; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  footer { grid-template-columns: 1fr; }
+  footer > section[aria-label="Footer about"],
+  footer > section[aria-label="Contact info"],
+  footer > section[aria-label="Meta"] { margin: 0 12px; }
+}
