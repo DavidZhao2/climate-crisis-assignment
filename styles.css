@@ -173,56 +173,145 @@ header nav button {
   border-radius: 14px;
 }
 
-/* footer */
+/* Footer */
 footer {
-  background: #0b1220;
-  color: #e9eefb;
-  border-top: 1px solid #1a2b4a;
-  padding: 8px 12px 0;
+  --footer-bg: #0b1220;
+  --footer-fg: #e9eefb;
+  --footer-muted: #a6b3d6;
+  --footer-border: #1a2b4a;
+  --footer-accent: #53ffa1;
+
+  background: var(--footer-bg);
+  color: var(--footer-fg);
+  border-top: 1px solid var(--footer-border);
+
+  width: 100%;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 8px 24px;
-  box-sizing: border-box;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  padding: 32px 16px 12px;
 }
 
-/* footer columns */
-footer > section[aria-label="Footer about"] { grid-column: 1; margin: 0; }
-footer > section[aria-label="Contact info"] { grid-column: 2; margin: 0; }
-footer > section[aria-label="Meta"] { grid-column: 1 / -1; margin: 0; padding-bottom: 6px; }
-footer > section { min-width: 0; }
+/* Top row sections */
+footer > section[aria-label="Footer about"] {
+  grid-column: 2 / span 6;
+  min-width: 0;
+  max-width: 560px;
+}
+footer > section[aria-label="Contact info"] {
+  grid-column: 8 / span 4;
+  min-width: 0;
+  max-width: 560px;
+}
 
-/* footer text */
-footer h2 { font-size: 18px; margin: 0 0 6px; }
+/* Meta line*/
+footer > section[aria-label="Meta"] {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;          
+  text-align: center;
+  justify-self: center;
+}
+
+footer > section[aria-label="Meta"] p {
+  margin: 0;
+  display: inline-block;
+}
+
+/* Typography */
+footer h2 {
+  margin: 0 0 8px;
+  font: 700 18px/1.25 Arial, sans-serif;
+  letter-spacing: 0.2px;
+}
 footer p,
 footer address,
 footer small {
-  font-size: 15px;
-  line-height: 1.35;
   margin: 0;
-  word-break: break-word; 
+  font: 15px/1.45 Arial, sans-serif;
+  color: var(--footer-fg);
+}
+footer address {
+  font-style: normal;
+  color: var(--footer-muted);
+}
+footer small { color: var(--footer-muted); }
+
+/* Links */
+footer a {
+  color: var(--footer-fg);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+footer a:hover,
+footer a:focus-visible {
+  text-decoration-thickness: 2px;
 }
 
-/* footer links */
-footer a { color: #e9eefb; text-decoration: none; }
-footer a:hover { text-decoration: underline; }
+/* Long emails/URLs wrap safely */
+footer address a,
+footer address span {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
 
-/* hero stack on small screens */
+/* Accent under headings */
+footer h2::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 40px;
+  margin-top: 6px;
+  background: linear-gradient(90deg, #4fc3ff, var(--footer-accent));
+  opacity: 0.8;
+  border-radius: 2px;
+}
+
+/* Footer focus states */
+footer :where(a, button) { outline: none; }
+footer :where(a, button):focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Mobile */
+/* Hero stack on small screens */
 @media (max-width: 800px) {
   .hero { flex-direction: column; }
   .hero-media { width: 100%; }
 }
 
-/* footer single column on tablets and below */
+/* Footer */
 @media (max-width: 960px) {
-  footer { grid-template-columns: 1fr; }
+  footer {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 20px;
+    padding: 28px 16px 10px;
+  }
+  footer > section[aria-label="Footer about"] {
+    grid-column: 1 / -1;
+    max-width: 720px;
+    justify-self: center;
+  }
+  footer > section[aria-label="Contact info"] {
+    grid-column: 1 / -1;
+    max-width: 720px;
+    justify-self: center;
+  }
+  footer > section[aria-label="Meta"] {
+    grid-column: 1 / -1; 
+  }
 }
 
-/* facts one column on phones */
+/* Facts one column on phones */
 @media (max-width: 560px) {
   .facts-grid { grid-template-columns: 1fr; }
 }
 
-/* ultra small nav overflow handling */
+/* Ultra small nav overflow handling */
 @media (max-width: 420px) {
   header nav ul {
     flex-wrap: nowrap;
@@ -233,14 +322,12 @@ footer a:hover { text-decoration: underline; }
   header nav ul::-webkit-scrollbar { display: none; }
 }
 
+/* Footer small type tweaks */
 @media (max-width: 480px) {
   footer h2 { font-size: 16px; }
-  footer address { font-size: 14px; line-height: 1.3; }
+  footer address { font-size: 14px; line-height: 1.35; }
 }
 
-footer address a { word-break: break-all; }
-
-:where(section, h1, h2, h3, h4)[id] { scroll-margin-top: 80px; }
 
 
 
