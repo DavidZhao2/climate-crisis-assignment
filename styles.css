@@ -1,16 +1,17 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
+/* reset */
+html, body { margin: 0; padding: 0; }
 
+/* header */
 header {
-  position: sticky;   
+  position: sticky;
   top: 0;
-  background: #0b1220; 
+  z-index: 1000; 
+  background: #0b1220;
   color: #ffffff;
   border-bottom: 1px solid #1a2b4a;
 }
 
+/* top bar container */
 .nav {
   max-width: auto;
   margin: 0 auto;
@@ -21,21 +22,25 @@ header {
   gap: 24px;
 }
 
+/* push nav items to the right */
 .nav > nav { margin-left: auto; }
 
+/* brand block */
 .brand {
   display: flex;
   align-items: center;
   gap: 8px;
 }
+
+/* logo image */
 .logo {
   width: 36px;
   height: 36px;
-  display: block;     
-  border-radius: 50%;  
+  display: block;
+  border-radius: 50%;
 }
 
-
+/* nav list */
 header nav ul {
   list-style: none;
   margin: 0;
@@ -43,8 +48,11 @@ header nav ul {
   display: flex;
   gap: 12px;
 }
+
+/* nav list item */
 header nav li { display: flex; }
 
+/* nav button */
 header nav button {
   font: 600 16px/1 Arial, sans-serif;
   color: #e9eefb;
@@ -53,47 +61,182 @@ header nav button {
   border-radius: 999px;
   padding: 8px 12px;
   cursor: default;
+  white-space: nowrap;
 }
 
-html, body { height: 100%; }
-body { min-height: 100vh; display: flex; flex-direction: column; }
-main { flex: 1; }
+/* hero layout */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
 
+/* hero media */
+.hero-media {
+  width: 520px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #1a2b4a;
+  border-radius: 12px;
+}
+
+/* hero text spacing */
+.hero-copy h1 { margin: 0 0 8px; }
+.hero-copy p {
+  margin: 0 0 10px;
+  color: #152142;
+  line-height: 1.45;
+}
+
+/* facts wrapper */
+#facts {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px 24px;
+}
+
+/* facts title */
+#facts h2 {
+  margin: 12px 0 16px;
+  letter-spacing: 0.2px;
+}
+
+/* facts grid */
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 28px;
+  counter-reset: fact;
+}
+
+/* fact card */
+.fact-card {
+  position: relative;
+  background: linear-gradient(180deg, #142038 0%, #0f1a30 100%);
+  border: 1px solid #1a2b4a;
+  border-radius: 14px;
+  padding: 20px 22px 20px 64px; /* room for number badge */
+  min-height: 160px;
+  color: #e9eefb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+/* fact card accent bar */
+.fact-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(#4fc3ff, #53ffa1);
+  opacity: 0.9;
+}
+
+/* fact card heading */
+.fact-card h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+/* fact card text */
+.fact-card p {
+  margin: 0;
+  color: #a6b3d6;
+  line-height: 1.5;
+}
+
+/* fact card hover */
+.fact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  border-color: #2a4170;
+}
+
+/* fact card focus */
+.fact-card:focus-within {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+  border-radius: 14px;
+}
+
+/* footer */
 footer {
   background: #0b1220;
   color: #e9eefb;
   border-top: 1px solid #1a2b4a;
-  padding: 8px 0 0;                  
+  padding: 8px 0 0;
   display: grid;
-
   grid-template-columns: minmax(0, 550px) minmax(0, 550px);
-  justify-content: center;              
+  justify-content: center;
   column-gap: 24px;
   row-gap: 8px;
 }
 
+/* footer columns */
 footer > section[aria-label="Footer about"] { grid-column: 1; margin: 0 16px; }
 footer > section[aria-label="Contact info"] { grid-column: 2; margin: 0 16px; }
 
+/* footer meta row */
 footer > section[aria-label="Meta"] {
   grid-column: 1 / -1;
   margin: 0 16px;
-  padding-bottom: 6px;                 
+  padding-bottom: 6px;
 }
 
+/* footer text */
 footer h2 { font-size: 18px; margin: 0 0 6px; }
-footer p, footer address, footer small {
+footer p,
+footer address,
+footer small {
   font-size: 15px;
   line-height: 1.35;
   margin: 0;
+  word-break: break-word; 
 }
 
+/* footer links */
 footer a { color: #e9eefb; text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 
-@media (max-width: 640px) {
+/* hero stack on small screens */
+@media (max-width: 800px) {
+  .hero { flex-direction: column; }
+  .hero-media { width: 100%; }
+}
+
+/* footer single column on tablets and below */
+@media (max-width: 800px) {
   footer { grid-template-columns: 1fr; }
   footer > section[aria-label="Footer about"],
   footer > section[aria-label="Contact info"],
   footer > section[aria-label="Meta"] { margin: 0 12px; }
+}
+
+/* facts one column on phones */
+@media (max-width: 560px) {
+  .facts-grid { grid-template-columns: 1fr; }
+}
+
+/* ultra small nav overflow handling */
+@media (max-width: 420px) {
+  header nav ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  header nav ul::-webkit-scrollbar { display: none; }
 }
