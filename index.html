@@ -7,22 +7,25 @@
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-     <div class="container nav">
-      <div class="brand">
-        <div class="brand">
-        <img class="logo" src="logo.png" alt="Hurricane 101 logo" width="36" height="36">
-        <strong>Hurricane 101</strong>
-        <nav aria-label="Primary">
-          <ul>
-            <li><button class="navlink" type="button">Facts</button></li>
-            <li><button class="navlink" type="button">Safety</button></li>
-            <li><button class="navlink" type="button">Prep</button></li>
-            <li><button class="navlink" type="button">Resources</button></li>
-          </ul>
-        </nav>
-      </div>
-  </header>
+  <header id="top">
+  <div class="nav">
+    <div class="brand">
+      <img class="logo" src="logo.png" alt="Hurricane 101 logo" width="36" height="36">
+      <strong>Hurricane 101</strong>
+    </div>
+
+    <nav aria-label="Primary">
+      <ul>
+        <li><button class="navlink" type="button">Facts</button></li>
+        <li><button class="navlink" type="button">Safety</button></li>
+        <li><button class="navlink" type="button">Prep</button></li>
+        <li><button class="navlink" type="button">Resources</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
   <main id="main">
       <div class="hero-copy">
         <h1 id="hero-title">What is a <em>hurricane</em>?</h1>
@@ -65,7 +68,7 @@
     <section aria-label="Contact info">
       <h2>Contact</h2>
       <address>
-        School: <span>SFSU</span><br />
+        School: <span>SFSU</span><br>
         Location: <span>San Francisco, California</span>
       </address>
     </section>
@@ -73,25 +76,20 @@
     <section aria-label="Newsletter (non-functional)">
       <h2>Updates</h2>
       <form>
-        <label for="email">Join for updates (demo):</label><br />
-        <input id="email" name="email" type="email" placeholder="you@example.com" />
+        <label for="email">Join for updates (demo):</label><br>
+        <input id="email" name="email" type="email" placeholder="you@example.com">
         <button type="submit">Submit</button>
       </form>
       <p><small>Form is for layout only.</small></p>
     </section>
 
     <section aria-label="Meta">
+      <p><a href="#top">Back to Top</a></p>
       <p>
-        <a href="#top">Back to Top</a>
-      </p>
-      <p>
-        <small>
-          © <time datetime="2025">2025</time> Hurricane 101 •
-          Last updated: <time datetime="2025-10-20">October 20, 2025</time>
-        </small>
+        <small>© <time datetime="2025">2025</time> Hurricane 101 •
+        Last updated: <time datetime="2025-10-20">October 20, 2025</time></small>
       </p>
     </section>
   </footer>
 </body>
 </html>
-
