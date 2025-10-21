@@ -178,20 +178,18 @@ footer {
   background: #0b1220;
   color: #e9eefb;
   border-top: 1px solid #1a2b4a;
-  padding: 8px 0 0;
+  padding: 8px 12px 0;
   display: grid;
-  grid-template-columns: minmax(0, 550px) minmax(0, 550px);
-  justify-content: center;
-  column-gap: 24px;
-  row-gap: 8px;
+  grid-template-columns: 2fr 1fr;
+  gap: 8px 24px;
+  box-sizing: border-box;
 }
 
 /* footer columns */
-footer > section[aria-label="Footer about"] { grid-column: 1; margin: 0 16px; }
-footer > section[aria-label="Contact info"] { grid-column: 2; margin: 0 16px; }
-footer > section[aria-label="Meta"] { margin: 0; }
+footer > section[aria-label="Footer about"] { grid-column: 1; margin: 0; }
+footer > section[aria-label="Contact info"] { grid-column: 2; margin: 0; }
+footer > section[aria-label="Meta"] { grid-column: 1 / -1; margin: 0; padding-bottom: 6px; }
 footer > section { min-width: 0; }
-
 
 /* footer text */
 footer h2 { font-size: 18px; margin: 0 0 6px; }
@@ -215,11 +213,8 @@ footer a:hover { text-decoration: underline; }
 }
 
 /* footer single column on tablets and below */
-@media (max-width: 800px) {
+@media (max-width: 960px) {
   footer { grid-template-columns: 1fr; }
-  footer > section[aria-label="Footer about"],
-  footer > section[aria-label="Contact info"],
-  footer > section[aria-label="Meta"] { margin: 0 12px; }
 }
 
 /* facts one column on phones */
@@ -238,6 +233,14 @@ footer a:hover { text-decoration: underline; }
   header nav ul::-webkit-scrollbar { display: none; }
 }
 
+@media (max-width: 480px) {
+  footer h2 { font-size: 16px; }
+  footer address { font-size: 14px; line-height: 1.3; }
+}
+
+footer address a { word-break: break-all; }
+
 :where(section, h1, h2, h3, h4)[id] { scroll-margin-top: 80px; }
+
 
 
