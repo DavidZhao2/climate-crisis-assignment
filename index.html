@@ -2,13 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Hurricane</title>
+  <title>Hurricane 101</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-  <main>
-    
+  <header>
+     <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>Hurricane 101</div>
+      </div>
+        <nav aria-label="Primary">
+          <ul>
+            <li><button class="navlink" type="button">Facts</button></li>
+            <li><button class="navlink" type="button">Safety</button></li>
+            <li><button class="navlink" type="button">Prep</button></li>
+            <li><button class="navlink" type="button">Resources</button></li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+  <main id="main">
+    <section id="hero" aria-labelledby="hero-title">
+      <div class="hero-image" role="img" aria-label="Image of a hurricane">
+        Image of Hurricane
+      </div>
+
+      <div class="hero-copy">
+        <h1 id="hero-title">What is a <em>hurricane</em>?</h1>
+        <p>hurricane blah blah blah #1</p>
+        <p>hurricane blah blah blah #2</p>
+        <p>hurricane blah blah blah #3</p>
+      </div>
+    </section>
+
+    <section id="facts" aria-labelledby="facts-title">
+      <h2 id="facts-title">Hurricane Facts</h2>
+      <div class="facts-grid">
+        <article class="fact-card"><h3>Fact 1</h3><p>hurricane blah blah blah #1</p></article>
+        <article class="fact-card"><h3>Fact 2</h3><p>hurricane blah blah blah #2.</p></article>
+        <article class="fact-card"><h3>Fact 3</h3><p>hurricane blah blah blah #3</p></article>
+        <article class="fact-card"><h3>Fact 4</h3><p>hurricane blah blah blah #4</p></article>
+        <article class="fact-card"><h3>Fact 5</h3><p>hurricane blah blah blah #5</p></article>
+        <article class="fact-card"><h3>Fact 6</h3><p>hurricane blah blah blah #6</p></article>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <section aria-label="Footer about">
+      <h2>About This Project</h2>
+      <p>This one-page site is a class project about hurricanes. Content is placeholder only.</p>
+    </section>
+
+    <section aria-label="Quick sections">
+      <h2>Sections</h2>
+      <ul>
+        <li>Hero</li>
+        <li>Facts</li>
+        <li>Safety</li>
+        <li>Prep</li>
+        <li>Resources</li>
+      </ul>
+    </section>
+
+    <section aria-label="Contact info">
+      <h2>Contact</h2>
+      <address>
+        School: <span>SFSU</span><br />
+        Location: <span>San Francisco, California</span>
+      </address>
+    </section>
+
+    <section aria-label="Newsletter (non-functional)">
+      <h2>Updates</h2>
+      <form>
+        <label for="email">Join for updates (demo):</label><br />
+        <input id="email" name="email" type="email" placeholder="you@example.com" />
+        <button type="submit">Submit</button>
+      </form>
+      <p><small>Form is for layout only.</small></p>
+    </section>
+
+    <section aria-label="Meta">
+      <p>
+        <a href="#top">Back to Top</a>
+      </p>
+      <p>
+        <small>
+          © <time datetime="2025">2025</time> Hurricane 101 •
+          Last updated: <time datetime="2025-10-20">October 20, 2025</time>
+        </small>
+      </p>
+    </section>
+  </footer>
 </body>
 </html>
